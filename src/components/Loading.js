@@ -16,7 +16,6 @@ class Loading extends Component {
                   <div className="card-body">
                     <div>
                       <a
-                          href="http://www.dappuniversity.com/bootcamp"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -57,27 +56,10 @@ class Loading extends Component {
                   </div>
                   <div>
                     {!this.props.balance ? <div id="loader" className="spinner-border float-right" role="status"></div> :
-                      <div className="float-right" style={{ width: '220px' }}>
-                        <div className="float-left" style={{ height: '17px' }}>
-                          <b>MaxBet&nbsp;</b>
-                        </div>
-                        <div className="float-right" style={{ height: '17px' }}>
-                          {Number(this.props.web3.utils.fromWei((this.props.maxBet).toString())).toFixed(5)} <b>ETH&nbsp;</b>
-                        </div>                      
+                      <div className="float-right">
+                        <b>MaxBet:</b> {Number(window.web3.utils.fromWei((this.props.maxBet).toString())).toFixed(5)} <b>ETH</b>
                         <br></br>
-                        <div className="float-left" style={{ height: '17px' }}>
-                          <b>MinBet</b>($1)&nbsp;
-                        </div>
-                        <div className="float-right" style={{ height: '17px' }}>
-                          {Number(this.props.web3.utils.fromWei((this.props.minBet).toString())).toFixed(5)} <b>ETH&nbsp;</b>
-                        </div>
-                        <br></br>
-                        <div className="float-left">
-                          <b>Balance&nbsp;</b>
-                        </div>
-                        <div className="float-right">
-                          {Number(this.props.web3.utils.fromWei((this.props.balance).toString())).toFixed(5)} <b>ETH&nbsp;</b>
-                        </div>
+                        <b>Balance:</b> {Number(window.web3.utils.fromWei((this.props.balance).toString())).toFixed(5)} <b>ETH&nbsp;</b>
                       </div>
                     }
                   </div>
